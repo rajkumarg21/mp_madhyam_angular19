@@ -28,7 +28,7 @@ export class UserRegisterComponent {
       this.userService.register(this.form.value).subscribe({
         next: () => {
           alert('User registered successfully!');
-          this.router.navigate(['/user-login']);
+          this.router.navigate(['/login']);
         },
         error: (err) => {
           if (err.status === 409) {
