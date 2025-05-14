@@ -37,17 +37,11 @@ export class AuthService {
       );
   }
 
-  // isLoggedIn(): boolean {
-  //   const token = this.getToken();
-  //   const expiresAt = parseInt(localStorage.getItem('expiresAt') || '0', 10);
-  //   return !!token && Date.now() < expiresAt;
-  // }
-
   logout() {
     localStorage.removeItem('jwtToken');
     localStorage.removeItem('userRole');
     this.role = '';
-    this.router.navigate(['/user-login']);
+    this.router.navigate(['/login']);
   }
   
   isLoggedIn(): boolean {

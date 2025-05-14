@@ -1,10 +1,7 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { UserRegisterComponent } from './user-register/user-register.component';
-import { UserLoginComponent } from './user-login/user-login.component';
-import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
-import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
-import { AuthGuard } from './auth.guard';
+import { UserLoginComponent } from './login/login.component';
 import { RoleGuard } from './role.guard';
 
 
@@ -27,17 +24,10 @@ export const routes: Routes = [
         component: UserRegisterComponent 
     },
   { 
-    path: 'user-login', 
+    path: 'login', 
     component: UserLoginComponent 
 },
-// {
-//     path: 'user-dashboard',
-//     component : UserDashboardComponent
-// },
-// {
-//     path: 'admin-dashboard',
-//     component : AdminDashboardComponent
-// },
+
 {
     path: 'user-dashboard',
     canActivate: [RoleGuard],
